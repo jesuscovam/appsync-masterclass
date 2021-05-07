@@ -1,9 +1,11 @@
 {
   "name": "appsyncmasterclass",
+  "private": true,
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
+    "sls": "sls",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -16,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/jesuscovam/appsync-masterclass/issues"
   },
-  "homepage": "https://github.com/jesuscovam/appsync-masterclass#readme"
+  "homepage": "https://github.com/jesuscovam/appsync-masterclass#readme",
+  "devDependencies": {
+    "serverless": "^2.40.0"
+  }
 }
