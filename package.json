@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/jesuscovam/appsync-masterclass#readme",
   "devDependencies": {
-    "serverless": "^2.40.0"
+    "serverless": "^2.40.0",
+    "serverless-appsync-plugin": "^1.11.3"
   }
 }
