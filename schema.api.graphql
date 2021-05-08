@@ -22,7 +22,7 @@ type Query {
 }
 
 type Mutation {
-  editProfile(newProfile: ProfileInput!): MyProfile!
+  editMyProfile(newProfile: ProfileInput!): MyProfile!
 
   tweet(text: String!): Tweet!
 
@@ -41,10 +41,10 @@ type Mutation {
   unfollow(userId: ID!): Boolean!
 }
 
-type ProfileInput {
-  name: String
+input ProfileInput {
+  name: String!
   imageUrl: AWSURL
-  backgroundUrl: AWSURL
+  backgroundImageUrl: AWSURL
   bio: String
   location: String
   website: AWSURL
@@ -56,17 +56,17 @@ interface IProfile {
   name: String!
   screenName: String!
   imageUrl: AWSURL
-  backgroundUrl: AWSURL
+  backgroundImageUrl: AWSURL
   bio: String
   location: String
   website: AWSURL
   birthdate: AWSDate
   createdAt: AWSDateTime!
+  tweets: TweetsPage!
   followersCount: Int!
   followingCount: Int!
   tweetsCount: Int!
-  likesCount: Int!
-  tweets: TweetsPage!
+  likesCounts: Int!
 }
 
 type MyProfile implements IProfile {
@@ -74,17 +74,17 @@ type MyProfile implements IProfile {
   name: String!
   screenName: String!
   imageUrl: AWSURL
-  backgroundUrl: AWSURL
+  backgroundImageUrl: AWSURL
   bio: String
   location: String
   website: AWSURL
   birthdate: AWSDate
   createdAt: AWSDateTime!
+  tweets: TweetsPage!
   followersCount: Int!
   followingCount: Int!
   tweetsCount: Int!
-  likesCount: Int!
-  tweets: TweetsPage!
+  likesCounts: Int!
 }
 
 type OtherProfile implements IProfile {
@@ -92,17 +92,17 @@ type OtherProfile implements IProfile {
   name: String!
   screenName: String!
   imageUrl: AWSURL
-  backgroundUrl: AWSURL
+  backgroundImageUrl: AWSURL
   bio: String
   location: String
   website: AWSURL
   birthdate: AWSDate
   createdAt: AWSDateTime!
+  tweets: TweetsPage!
   followersCount: Int!
   followingCount: Int!
   tweetsCount: Int!
-  likesCount: Int!
-  tweets: TweetsPage!
+  likesCounts: Int!
   following: Boolean!
   followedBy: Boolean!
 }
