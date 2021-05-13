@@ -6,7 +6,7 @@ const chance = new Chance();
 
 module.exports.handler = async (event) => {
   if (event.triggerSource === "PostConfirmation_ConfirmSignUp") {
-    const name = event.request.userAttributes.name;
+    const name = event.request.userAttributes["name"];
     const suffix = chance.string({
       length: 8,
       casing: "upper",
@@ -16,7 +16,7 @@ module.exports.handler = async (event) => {
     const screenName = `${name.replace(/[^a-zA-Z0-9]/g, "")}${suffix}`;
     const user = {
       id: event.userName,
-      name: event.request.userAttributes.name,
+      name,
       screenName,
       createdAt: new Date().toJSON(),
       followersCount: 0,
